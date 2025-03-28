@@ -1,23 +1,15 @@
 import React from "react";
-import Buttons from "../../Components/Button/Buttons";
+import Buttons from "../../Components/Buttons/Buttons";
 import "./Signin.scss"
 
 export default function Signin() {
   return (
     <>
-      <div className="background-setup">
+      <div className="form-container">
 
-        <div className="dummy-text">
-          <div className="text-header">
-          Lorum Ispum Simple Dummy Text
-          </div>
+        {/* AuthBackground component */}
 
-          <div className="text-content">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-          </div>
-        </div>
-
-        <div className="sign-in-form">
+        <div className="sign-in-form-container">
           {/* signin - form component */}
         </div>
 

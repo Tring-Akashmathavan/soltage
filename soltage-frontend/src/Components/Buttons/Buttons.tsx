@@ -1,5 +1,5 @@
 import {Button} from "@mui/material"
-import "./Buttons.css"
+import "./Buttons.scss"
 
 export default function Buttons() {
   return (

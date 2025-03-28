@@ -1,11 +1,22 @@
-import React from 'react'
+import {useForm} from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
-export default function SignInForm() {
+const schema = yup.object().shape({
+  
+})
+
+function SignInForm() {
   return (
     <>
-      <div className='form-container'>
-        
+      <div className='soltage-form-container'>
+          <div className="form-container">
+
+
+          </div>
       </div>
     </>
   )
 }
+
+export default SignInForm
