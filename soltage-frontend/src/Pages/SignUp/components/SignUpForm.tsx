@@ -30,41 +30,44 @@ export default function SignUpForm() {
 
   return (
     <>
-        <form onSubmit = {handleSubmit(onSubmit)} className="form-container">
-            <div className="soltage-form-container">
-                
-                {/* Soltage image setup */}
-                <div className="soltage-image"></div>
+        <div className="container">
 
-                {/* welcome signup */}
-                <div className="welcome-container">
-                    
-                    <div className="welcome-header-container">
-                    Welcome, Sign Up
+            <div className="form-container">
+
+                    {/* Soltage image setup */}
+                    <div className="soltage-image"></div>
+
+                    {/* welcome signup */}
+                    <div className="welcome-container">
+                        
+                        <div className="welcome-header-container">
+                        Welcome, Sign Up
+                        </div>
+
+                        <div className="welcome-content-container">
+                        Lorem Ipsum is simply dummy text of the printing and type setting industry.
+                        </div>
                     </div>
 
-                    <div className="welcome-content-container">
-                    Lorem Ipsum is simply dummy text of the printing and type setting industry.
-                    </div>
-                </div>
+            </div>
 
-                {/* input fields */}
+            <form action=""  onSubmit = {handleSubmit(onSubmit)} className="form">
+
+                    {/* input fields */}
 
                 <div className="input-fields">
 
-                  <div className="name-fields">
-                        <label htmlFor="firstname" className="name-container">
-                            First Name *
-                        </label>
-            
-                        {/* <input
-                            {...register("firstname")}
-                            placeholder=""
-                            type="firstname"
-                            required /> */}
+                <div className="names-container">
+                <div className="name-fields">
 
-                            <FormControl className='material-field' >
+                        <div className="first-name-container">
+                        <div className="name-container">
+                            <label htmlFor="firstname" >First Name *</label>
+                        </div>
+                        
+                            <FormControl className='material-field' sx={{width : 239 , paddingRight : "16px"}}>
                             <OutlinedInput 
+                            sx={{height : 50}}
                             placeholder="Enter first name" 
                             {...register("firstname")}
                             type="firstname"
@@ -72,18 +75,14 @@ export default function SignUpForm() {
                             </FormControl>
 
                         <p>{errors.firstname?.message}</p>
-
-                        <label htmlFor="lastname" className="name-container">
-                            Last Name *
-                        </label>
-                        {/* <input
-                            {...register("lastname")}
-                            placeholder="Enter last name"
-                            type="lastname"
-                            required /> */}
+                        </div>
                         
-                        <FormControl className='material-field' >
+                        <div className="first-name-container">
+                        <div className="name-container"><label htmlFor="lastname" >Last Name *</label></div>
+                        
+                        <FormControl className='material-field' sx={{width : 239}}>
                             <OutlinedInput 
+                            sx={{height : 50 }}
                             {...register("lastname")}
                             placeholder="Enter last name"
                             type="lastname"
@@ -91,21 +90,18 @@ export default function SignUpForm() {
                             </FormControl>
 
                         <p>{errors.lastname?.message}</p>
+                        </div>
                     </div>
-                            
+                    </div>
                         <div className="field-containers">
-                        <label htmlFor="email" className="input-field-container">
-                            Email *
-                        </label>
 
-                        {/* <input
-                            {...register("email")}
-                            placeholder=""
-                            type="email"
-                            required /> */}
+                            <div className="input-field-container">
+                            <label htmlFor="email">Email *</label>
+                            </div>
 
                         <FormControl className='material-field' >
                             <OutlinedInput 
+                            sx={{height : 50}}
                             {...register("email")}
                             placeholder="Enter email"
                             type="email"
@@ -113,17 +109,13 @@ export default function SignUpForm() {
                             </FormControl>
                         <p>{errors.email?.message}</p>
                     
-                        <label htmlFor="password" className="input-field-container">
-                            Password *
-                        </label>
-                        {/* <input
-                            {...register("password")}
-                            placeholder="Enter new password"
-                            type="password"
-                            required /> */}
-
+                        <div className="input-field-container">
+                            <label htmlFor="password">Password *</label></div>
+                        
+                        
                         <FormControl className='material-field' >
                             <OutlinedInput 
+                                sx={{height : 50}}
                                 {...register("password")}
                                 placeholder="Enter new password"
                                 type="password"
@@ -140,18 +132,12 @@ export default function SignUpForm() {
 
                         <p>{errors.password?.message}</p>
 
-                        <label htmlFor="confirmpassword" className="input-field-container">
-                            Confirm Password *
-                        </label>
-
-                        {/* <input
-                            {...register("confirmpassword")}
-                            placeholder="Re-type new password"
-                            type="password"
-                            required /> */}
+                        <div className="input-field-container">
+                            <label htmlFor="confirmpassword">Confirm Password *</label></div>
 
                         <FormControl className='material-field' >
                             <OutlinedInput 
+                                 sx={{height : 50}}
                                 {...register("confirmpassword")}
                                 placeholder="Re-type new password"
                                 type="password"
@@ -159,19 +145,15 @@ export default function SignUpForm() {
                             </FormControl>
 
                         <p>{errors.confirmpassword?.message}</p>
-
-                        <label htmlFor="department" className="input-field-container">
-                            Department *
-                        </label>
-
-                        {/* <input
-                            {...register("department")}
-                            placeholder="Executive"
-                            type="department"
-                            required /> */}
+                        
+                        <div className="input-field-container">
+                            <label htmlFor="department">Department *</label>
+                            </div>
+                        
 
                         <FormControl className='material-field' >
                             <OutlinedInput 
+                            sx={{height : 50}}
                                 {...register("department")}
                                 placeholder="Executive"
                                 type="department"
@@ -181,14 +163,12 @@ export default function SignUpForm() {
                         <p>{errors.department?.message}</p>
                 </div>
                 </div>  
-
-                {/* Button component use  */}
-                <div className="button-container">
+            </form>
+            {/* Button component use  */}
+            <div className="button-container">
                     <Buttons/>
                 </div>
-
-            </div>
-        </form>
+        </div>
     </>
   )
 }

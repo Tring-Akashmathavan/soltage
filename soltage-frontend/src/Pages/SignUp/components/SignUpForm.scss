@@ -6,22 +6,17 @@
     box-sizing: border-box;
 }
 
-.form-container{
-    height: 100vh;
-    width: 600px;
+.container{
     border-radius: 18px;
     background-color: #FAFBFC;
-    margin : 40px 40px 40px 0px;
     display: flex;
-
-
-        .soltage-form-container{
-            border-radius: 18px;
-            // background-color: red;
-            padding: 39.5px 60px 36px 60px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+     padding: 39.5px 60px;
+    flex-direction: column;
+    align-items: center;
+            .form-container{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
 
             //soltage background image setting
             .soltage-image{
@@ -34,7 +29,7 @@
 
         // welcome container
             .welcome-container{
-                padding: 36px;
+                padding: 36px 0px;
                 display: flex;
                 flex-direction: column;
                 
@@ -49,7 +44,7 @@
 
                 .welcome-content-container{
                     color: #7B91B0;
-                    font-family: Poppins;
+                    font-family: Poppins , sans-serif;
                     font-weight: 400;
                     font-size: 14px;
                     line-height: 100%;
@@ -57,23 +52,41 @@
                 }
             }
 
-            //input fields
-           
-            .input-fields{
+        }
+
+        .input-fields{
+
+            .names-container{
+                
+            .name-fields{
                 color: #7B91B0;
                 font-family: Poppins , sans-serif;
                 font-weight: 500;
                 font-size: 12px;
                 line-height: 100%;
-                
-                .name-fields {
-                    width: 50%;
-                    display: flex;
-                    flex-direction: row;
-                    
+                display: flex;
+               
+                .name-container{
+                    padding-bottom: 6px; 
                 }
-                 
             }
-           
-        }       
+        }
+
+            .field-containers{
+                color: #7B91B0;
+                font-family: Poppins , sans-serif;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 100%;
+            }
+
+            .input-field-container{
+                padding-top: 20px;
+                padding-bottom: 6px;
+            }
+        }
+
+        .button-container{
+            padding-top: 36px;
+        }
     }

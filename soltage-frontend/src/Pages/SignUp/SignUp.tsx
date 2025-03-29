@@ -1,16 +1,14 @@
-import React from 'react'
+import AuthBackground from '../../Components/AuthBackground/AuthBackground'
+import SignUpForm from './components/SignUpForm'
+import "./SignUp.scss"
 
 export default function SignUp() {
   return (
     <>
     <div className='sign-up-form-container'>
-      <div>
-        {/* AuthBackground */}
-      </div>
-
-      <div>
-          
-      </div>
+        <AuthBackground>
+        <SignUpForm />
+        </AuthBackground>
       </div>
     </>
   )
