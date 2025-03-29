@@ -1,11 +1,20 @@
 import Buttons from "../../../Components/Buttons/Buttons"
+import { useState } from "react";
 import "./SignUpForm.scss"
 import {useForm} from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from 'yup';
-import { FormControl, IconButton, InputAdornment, OutlinedInput } from "@mui/material";
+import { Button, FormControl, IconButton, InputAdornment, OutlinedInput } from "@mui/material";
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 export default function SignUpForm() {
+
+    const[showPassword , setShowPassword] = useState(false);
+    const[showConfirmPassword , setShowConfirmPassword] = useState(false);
+
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
+    const handleClickConfirmPassword = () => setShowConfirmPassword((show) => !show);
 
     const schema = yup.object().shape({
         firstname : yup.string().required("first name is required").matches( /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -108,9 +117,12 @@ export default function SignUpForm() {
                             required/>
                             </FormControl>
                         <p>{errors.email?.message}</p>
+
+                        {/* password division */}
                     
                         <div className="input-field-container">
-                            <label htmlFor="password">Password *</label></div>
+                            <label htmlFor="password">Password *</label>
+                        </div>
                         
                         
                         <FormControl className='material-field' >
@@ -118,19 +130,26 @@ export default function SignUpForm() {
                                 sx={{height : 50}}
                                 {...register("password")}
                                 placeholder="Enter new password"
-                                type="password"
+                                type = {showPassword  ? "text" : "password"}
                                 required
                                 endAdornment={
                                     <InputAdornment position="end">
-                                        <IconButton
-
-                                        />
+                                            <IconButton
+                                            aria-label={
+                                                showPassword ? 'hide the password' : 'display the password'
+                                            }
+                                            onClick={handleClickShowPassword}
+                                            >
+                                            {showPassword ? <Visibility /> : <VisibilityOff />}
+                                            </IconButton>
                                     </InputAdornment>
                                     }/>
                                  
                             </FormControl>
 
                         <p>{errors.password?.message}</p>
+                                
+                        {/* confirm password division */}
 
                         <div className="input-field-container">
                             <label htmlFor="confirmpassword">Confirm Password *</label></div>
@@ -140,8 +159,20 @@ export default function SignUpForm() {
                                  sx={{height : 50}}
                                 {...register("confirmpassword")}
                                 placeholder="Re-type new password"
-                                type="password"
-                                required/>
+                                type = {showConfirmPassword  ? "text" : "password"}
+                                required
+                                endAdornment={
+                                    <InputAdornment position="end">
+                                            <IconButton
+                                            aria-label={
+                                                showConfirmPassword ? 'hide the password' : 'display the password'
+                                            }
+                                            onClick={handleClickConfirmPassword}
+                                            >
+                                            {showConfirmPassword ? <Visibility /> : <VisibilityOff />}
+                                            </IconButton>
+                                    </InputAdornment>
+                                    }/>
                             </FormControl>
 
                         <p>{errors.confirmpassword?.message}</p>
@@ -164,10 +195,11 @@ export default function SignUpForm() {
                 </div>
                 </div>  
             </form>
+
             {/* Button component use  */}
             <div className="button-container">
-                    <Buttons/>
-                </div>
+            <Button variant="contained" className='material-button'>Sign Up</Button>            
+            </div>
         </div>
     </>
   )

@@ -8,7 +8,6 @@
 }
 
 .background-setup{
-    height: 100vh;
     display: flex;
     align-items: end;
     background-image: url("../../assets/images/form-banner.png");
@@ -16,9 +15,10 @@
     background-repeat: no-repeat;
     padding-left: 60px;
     padding-bottom: 40px;
+    padding-top: 40px;
 
     .dummy-text{
-    width: 680px;
+     width: 680px;
     color: #ffffff;
     
    .text-header{
@@ -39,8 +39,7 @@
 }
 
 .children-form-container{
-    position : absolute;
-    right: 40px;
+    
 }
 
 }

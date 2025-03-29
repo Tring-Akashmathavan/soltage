@@ -7,23 +7,29 @@
 }
 
 .container{
+    width: 97%;
+    height: 820px;
     border-radius: 18px;
     background-color: #FAFBFC;
     display: flex;
-     padding: 39.5px 60px;
+    padding: 39.5px 60px;
     flex-direction: column;
     align-items: center;
+
             .form-container{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                background-image: url("../../../../assets/images/signup-illustration.svg");
+                background-repeat: no-repeat;
+                background-position: top right;
 
             //soltage background image setting
             .soltage-image{
                 width: 150px;
                 height: 58px;
                 background-image: url("../../../assets/images/SoltageLogo.png");
-                background-size: cover;
+                background-size: 100%;
                 background-repeat: no-repeat;
             }
 
@@ -51,11 +57,10 @@
                     text-align: center;
                 }
             }
-
         }
 
         .input-fields{
-
+                
             .names-container{
                 
             .name-fields{
@@ -78,12 +83,26 @@
                 font-weight: 500;
                 font-size: 12px;
                 line-height: 100%;
+      
+                .material-field{
+                    width: 480px;
+                    height: 50px;
+                    border-radius: 8px;
+                }
             }
 
             .input-field-container{
                 padding-top: 20px;
                 padding-bottom: 6px;
             }
+        }
+
+        .material-button{
+            width: 480px;
+            height: 56px;
+            background-color:#FE6B02 !important;
+            color: #FFFFFF !important;
+            text-transform: capitalize !important;
         }
 
         .button-container{
